@@ -8,6 +8,7 @@ import tempfile
 import os
 import shutil
 import io
+import os
 
 app = FastAPI()
 
@@ -21,7 +22,8 @@ app.add_middleware(
 )
 
 # Configure Gemini AI
-genai.configure(api_key="AIzaSyD1GavBmslusEMDZdynxZXM6dUEtia7FwM")
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+genai.configure(api_key=GEMINI_API_KEY)
 model = genai.GenerativeModel(model_name="gemini-2.0-flash")
 
 def convert_pdf_to_images(pdf_content):
