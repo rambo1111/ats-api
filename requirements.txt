@@ -3,4 +3,3 @@ uvicorn
 pymupdf
 google-generativeai
 pillow
-shutil
