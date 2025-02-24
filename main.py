@@ -24,7 +24,13 @@ app.add_middleware(
 # Configure Gemini AI
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel(model_name="gemini-2.0-flash")
+generation_config = {
+  "temperature": 0
+}
+model = genai.GenerativeModel(
+    model_name="gemini-2.0-flash",
+    generation_config=generation_config
+)
 
 def convert_pdf_to_images(pdf_content):
     """Convert PDF content to images"""
