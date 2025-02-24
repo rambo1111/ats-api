@@ -74,6 +74,8 @@ def analyze_resume(resume_text, job_description):
     your task is to evaluate the resume against the provided job description. Give me the percentage of match if the resume matches
     the job description.
 
+    Be very strict and give a detailed analysis.
+
     Given this resume text and job description, provide an analysis:
     
     Resume: {resume_text}
